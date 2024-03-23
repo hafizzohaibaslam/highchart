@@ -184,87 +184,100 @@ function App() {
 
 
 
-
   const stackedBarChartOptions = {
     chart: {
       type: 'bar',
-      backgroundColor: 'transparent',
-      height: 600 // Adjust height as necessary to match the design
+      backgroundColor: '#FFFFFF', // Set the background color to white
+      height: 600, // Adjust the height to match your design
+      width: 900,
     },
     title: {
       text: '% Attendance of Stadium Capacity',
       align: 'left',
       style: {
-        color: '#333333', // Color adjusted to a dark shade, assumed from the image
-        fontSize: '20px',
-        fontWeight: 'bold'
+        color: '#333333', // Dark text for the title
+        fontSize: '18px',
+        fontWeight: 'bold',
       }
     },
-    xAxis: {
-      categories: ['Newcastle Falcons', 'Gloucester', 'Bristol', 'Sale', 'Leicester Tigers', 'Exeter Chiefs', 'Saracens', 'Bath', 'Harlequins', 'Northampton Saints'],
-      title: {
-        text: null
+    subtitle: {
+      text: '2022-2023 Season',
+      align: 'left',
+      style: {
+        color: '#000000',
+        fontSize: '16px',
       },
+    },
+    xAxis: {
+      categories: [
+        'Newcastle Falcons', 'Gloucester', 'Bristol', 'Sale', 
+        'Leicester Tigers', 'Exeter Chiefs', 'Saracens', 
+        'Bath', 'Harlequins', 'Northampton Saints'
+      ].reverse(), // Reverse the order to match the design
       labels: {
         style: {
           color: '#333333',
-          fontSize: '14px'
+          fontSize: '13px', // Match font size to your design
         }
       }
     },
     yAxis: {
       min: 0,
       title: {
-        text: null
+        text: null, // No title for yAxis
       },
+      gridLineColor: '#e6e6e6',
       labels: {
-        overflow: 'justify',
         style: {
           color: '#333333',
-          fontSize: '14px'
+          fontSize: '13px', // Match font size to your design
         }
       }
     },
-    tooltip: {
-      shared: true,
-      valueSuffix: ' units' // Modify as per the data unit
-    },
-    plotOptions: {
-      bar: {
-        stacking: 'normal',
-        dataLabels: {
-          enabled: true,
-          color: '#FFFFFF' // Set to white or as per design for visibility
-        },
-        // Remove the border radius if you want the bars to be flat without rounded corners
-      }
-    },
     legend: {
-      layout: 'vertical',
+      layout: 'horizontal',
       align: 'right',
       verticalAlign: 'top',
-      x: -40,
-      y: 80,
       floating: true,
-      borderWidth: 1,
-      backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-      shadow: true,
-      reversed: true // To maintain the order in the design
+      itemStyle: {
+        color: '#000000',
+        fontSize: '14px',
+      },
+    },
+    tooltip: {
+      shared: true,
+      pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+    },
+    plotOptions: {
+      series: {
+        stacking: 'normal',
+        borderRadius: 5, // If the bars in the design are rounded
+        borderWidth: 0,
+      },
+      bar: {
+        dataLabels: {
+          enabled: true,
+          inside: true, // To match the design
+          align: 'right', // To match the design
+          color: '#FFFFFF' // White text for data labels
+        },
+      },
+      
     },
     credits: {
-      enabled: false // Disable the Highcharts credits
+      enabled: false,
     },
+    
     series: [{
-      name: '% of Attendance',
-      data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], // Sample data
-      color: '#7cb5ec' // Light blue color from the image
-    }, {
       name: 'Stadium Capacity',
-      data: [110, 120, 130, 140, 150, 160, 170, 180, 190, 200], // Sample data
-      color: '#434348' // Dark blue color from the image
+      data: [200, 100, 100, 100, 100, 100, 100, 100, 100, 100], // Dummy data
+      color: '#7681FC', // Light blue color from the image
+    }, {
+      name: '% of Attendance',
+      data: [150, 65, 80, 85, 90, 95, 60, 55, 50, 45], // Dummy data
+      color: '#2F337D', // Dark blue color from the image
     }]
   };
-
 
 
 
@@ -293,7 +306,7 @@ function App() {
 
 
     <div>
-      {/* <HighchartsReact highcharts={Highcharts} options={stackedBarChartOptions} /> */}
+    <HighchartsReact highcharts={Highcharts} options={stackedBarChartOptions} />
     </div>
 
     </>
