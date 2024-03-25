@@ -332,8 +332,6 @@ function App() {
         "Sale",
         "Leicester Tigers",
         "Exeter Chiefs",
-        "Saracens",
-        "Bath",
       ].reverse(), // Reverse the order to match the design
       labels: {
         style: {
@@ -392,12 +390,12 @@ function App() {
     series: [
       {
         name: "Stadium Capacity",
-        data: [200, 100, 100, 100, 100, 100, 100], // Dummy data
+        data: [200, 100, 100, 100, 100], // Dummy data
         color: "#7681FC", // Light blue color from the image
       },
       {
         name: "% of Attendance",
-        data: [150, 65, 80, 85, 90, 95, 60], // Dummy data
+        data: [150, 65, 80, 85, 90], // Dummy data
         color: "#2F337D", // Dark blue color from the image
       },
     ],
