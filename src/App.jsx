@@ -751,7 +751,7 @@ function App() {
       <br />
       <br />
 
-      {/* <div>
+      <div>
         <HighchartsReact
           highcharts={Highcharts}
           options={barBasicChartOptions}
@@ -763,7 +763,7 @@ function App() {
       <br />
       <br />
       <br />
-      <br /> */}
+      <br />
 
       <div>
         <HighchartsReact
