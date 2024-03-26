@@ -229,20 +229,27 @@ function App() {
       text: "Title Partner Revenue history",
       align: "left",
       style: {
-        color: "#000000",
-        fontSize: "20px",
-        fontWeight: "bold",
+        color: "#545FE8",
+        fontSize: "14px",
+        marginTop:"10px"
+        // fontWeight: "bold",
       },
     },
-    // subtitle: {
-    //   useHTML: true,
-    //   text: '£714m ↑ 26%<br/>From 2016 to 2022 (In million pounds)',
-    //   align: 'left',
-    //   style: {
-    //     color: '#000000',
-    //     fontSize: '16px',
-    //   },
-    // },
+    subtitle: {
+      useHTML: true,
+      text: '<span style="font-weight: bold; font-size:24px">£714m </span>' +
+            '<span style="color:#077D55; font-weight: bold;">↑ 26% </span><br/>' +
+            '<span style="display: block; margin-top:10px; color:#697077">From 2016 to 2022 (In million pounds)</span>',
+      align: 'left',
+      style: {
+        color: '#000000',
+        fontSize: '16px',
+        marginBottom:'20px'
+      },
+      y: 35// Adjust the y position as needed
+    },
+    
+    
 
     xAxis: {
       categories: ['2016/17', '2017/18', '2018/19', '2019/20', '2020/21', '2021/22'].sort(),
@@ -287,7 +294,7 @@ function App() {
         dataLabels: {
           enabled: true,
         },
-        color: "#9E5EFD", // Use the same purple color as before
+        color: "#C2C7FC", // Use the same purple color as before
       },
     },
     legend: {
@@ -333,6 +340,8 @@ function App() {
         "Leicester Tigers",
         "Exeter Chiefs",
       ].reverse(), // Reverse the order to match the design
+      gridLineWidth: 1, // Set the width of the grid line
+      gridLineColor: "#e6e6e6",
       labels: {
         style: {
           color: "#333333",
@@ -345,7 +354,9 @@ function App() {
       title: {
         text: null, // No title for yAxis
       },
+      gridLineWidth: 0, // Set the width of the grid line
       gridLineColor: "#e6e6e6",
+
       labels: {
         style: {
           color: "#333333",
@@ -405,7 +416,8 @@ function App() {
   const barBasicChartOptions = {
     chart:{
       type: 'bar',
-      backgroundColor:'transparent'
+      backgroundColor:'transparent',
+      height:'550'
     }, 
     title:{
       text:'Social high-low followers for teams',
@@ -432,6 +444,8 @@ function App() {
           fontSize:'14px'
         }
       },
+      gridLineWidth: 1, // Set the width of the grid line
+      gridLineColor: "#e6e6e6",
       crosshair:true
     },
     yAxis:{
@@ -443,6 +457,7 @@ function App() {
           fontSize:'14px'
         }
       },
+      gridLineWidth: 0, // Set the width of the grid line
       gridLineColor:'#e6e6e6',
       labels:{
         style:{
@@ -451,6 +466,20 @@ function App() {
         }
       }
     },
+
+    legend: {
+      layout: "horizontal",
+      align: "right",
+      verticalAlign: "top",
+      floating: true,
+      itemStyle: {
+        color: "#000000",
+        fontSize: "14px",
+      },
+    },
+
+
+
     tooltip:{
       headerFormat:'<span style="font-size:10px">{point.key}</span><table>',
       pointFormat:'<tr><td style="color:{series.color};padding:0">{series.name}: </td><td style="padding:0"><b>{point.y:.1f} m</b></td></tr>',
