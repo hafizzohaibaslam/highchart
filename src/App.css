@@ -2,7 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .logo {
@@ -84,3 +84,88 @@
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
 }
+
+
+
+
+
+.your-table-class {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.your-table-class th, .your-table-class td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.your-table-class th {
+  border-bottom: 1px solid #697077;
+}
+
+
+
+.table-header h1 {
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
+.table-header h2 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #697077;
+}
+
+.your-table-class {
+  width: 100%;
+  /* Add your styling here */
+}
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.page-range {
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0; /* No space between pagination items */
+}
+
+.pagination li a {
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  color: #000000;
+  font-size: 16px;
+}
+
+.pagination li.prev-button,
+.pagination li.next-button {
+  cursor: pointer;
+}
+
+.pagination li.disabled a {
+  color: #cccccc;
+}
+
+.pagination li.active a {
+  display: none;
+}
+
+/* You might need to add media query styles for responsive design */
+
+
