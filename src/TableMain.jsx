@@ -7,8 +7,11 @@ import { db, getDocs, addDoc, collection } from "./firebase";
 
 const columns = [ 
     {
-      Header: 'Club Name',
+      Header: 'Team Name',
       accessor: 'clubName', // accessor is the key from data
+      Cell: ({ cell: { value } }) => (
+        <img src={value} alt="Shirt" style={{ width: '40px', height: '40px' }} />
+      )
     },
     {
       Header: 'Sponsor Name',
